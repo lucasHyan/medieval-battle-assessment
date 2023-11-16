@@ -1,6 +1,8 @@
 package org.infnet.character;
 
 import lombok.Data;
+import org.infnet.Dice;
+
 @Data
 public abstract class Character {
 
@@ -18,4 +20,34 @@ public abstract class Character {
 
     public abstract int getDamage();
 
+
+    public int rollInitiative() {
+        return Dice.rollD10() + agility;
+    }
+    public int rollAttack() {
+        return Dice.rollD10() + agility + strength;
+    }
+    public int rollDefense() {
+        return Dice.rollD10() + agility + defense;
+    }
+    public void attacks(Character defender) {
+        int attackRoll = this.rollAttack();
+        int defenseRoll = defender.rollDefense();
+
+        if (defenseRoll > attackRoll) {
+            return;
+        }
+        defender.takeDamage(this.getDamage());
+    }
+    public void takeDamage(int damage){
+        this.HitPoints -= damage;
+    }
+    public boolean isAlive(){
+        return this.HitPoints > 0;
+    }
+    @Override
+    public String toString() {
+        return getClass().getName();
+    }
 }
+

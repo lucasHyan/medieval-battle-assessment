@@ -10,7 +10,6 @@ public class Kobold extends Character {
 
     @Override
     public int getDamage(){
-        Dice dice = new Dice();
-        return dice.rollD2() + dice.rollD2() + dice.rollD2();
+        return Dice.rollD2() + Dice.rollD2() + Dice.rollD2() + getStrength();
     }
 }

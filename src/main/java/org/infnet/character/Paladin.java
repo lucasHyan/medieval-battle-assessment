@@ -8,7 +8,6 @@ public class Paladin extends Character{
     }
     @Override
     public int getDamage(){
-        Dice dice = new Dice();
-        return dice.rollD4() + dice.rollD4();
+        return Dice.rollD4() + Dice.rollD4() + getStrength();
     }
 }

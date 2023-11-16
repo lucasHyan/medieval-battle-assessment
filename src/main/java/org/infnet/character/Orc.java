@@ -9,7 +9,6 @@ public class Orc extends Character{
 
     @Override
     public int getDamage(){
-       Dice dice = new Dice();
-       return dice.rollD8();
+       return Dice.rollD8() + getStrength();
     }
 }

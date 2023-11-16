@@ -9,7 +9,6 @@ public class Barbarian extends Character {
     }
     @Override
     public int getDamage(){
-        Dice dice = new Dice();
-        return dice.rollD6() + dice.rollD6();
+        return Dice.rollD6() + Dice.rollD6() + getStrength();
     }
 }
