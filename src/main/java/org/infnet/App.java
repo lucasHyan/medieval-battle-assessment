@@ -1,13 +1,15 @@
 package org.infnet;
 
-/**
- * Hello world!
- *
- */
+import java.util.Scanner;
+
+import  org.infnet.MainMenu;
+
+
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        MainMenu mainmenu = new MainMenu();
+        mainmenu.welcomeMenu();
     }
 }
