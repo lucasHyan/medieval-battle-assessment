@@ -5,7 +5,7 @@ import org.infnet.Dice;
 public class Barbarian extends Character {
 
     public Barbarian() {
-        super(13,6,1,3);
+        super(13,6,1,3, "Barbarian");
     }
     @Override
     public int getDamage(){

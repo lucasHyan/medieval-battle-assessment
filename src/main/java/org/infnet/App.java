@@ -19,19 +19,17 @@ public class App {
 
 
         mainmenu.welcomeMenu();
-
         Scanner scanner = new Scanner(System.in);
+        
         LOGGER.info("Scanning user class choice");
         mainmenu.classChoiceMenu();
         String userClassChoice = scanner.next();
+        LOGGER.info("Assigning user class");
+        String userClass = assignUserClass(userClassChoice);
+        
 
-        String userClass;
-        switch (userClassChoice) {
-            case "2" -> userClass = "Barbarian";
-            case "3" -> userClass = "Paladin";
-            default -> userClass = "Warrior";
-        }
-
+       
+        
         LOGGER.info("Initializing player character");
         Character playerCharacter = CharacterUtil.createUserHero(userClass);
         LOGGER.info("Initializing random monster");
@@ -46,5 +44,21 @@ public class App {
         LOGGER.info("End of the program time between start to end " + between + " MS");
 
     }
+
+     public static String assignUserClass(String userClassChoice) {
+            String userClass;
+            try {
+                switch (userClassChoice) {
+                    case "1" -> userClass = "Warrior";
+                    case "2" -> userClass = "Barbarian";
+                    case "3" -> userClass = "Paladin";
+                    default -> throw new IllegalArgumentException("Invalid class choice. Please choose between 1 and 3.");
+                }
+            } catch (IllegalArgumentException e) {
+                LOGGER.error("Invalid class choice. Please choose between 1 and 3.");
+                throw e;
+            }
+            return userClass;
+        }
 }
 

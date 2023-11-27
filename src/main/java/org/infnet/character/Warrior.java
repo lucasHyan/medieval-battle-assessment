@@ -4,7 +4,7 @@ import org.infnet.Dice;
 
 public class Warrior extends Character{
     public Warrior() {
-        super(12,4,3,3);
+        super(12,4,3,3, "Warrior");
     }
     @Override
     public int getDamage(){

@@ -4,7 +4,7 @@ import org.infnet.Dice;
 
 public class Orc extends Character{
     public Orc() {
-        super(20,6,2,2);
+        super(20,6,2,2, "Orc");
     }
 
     @Override

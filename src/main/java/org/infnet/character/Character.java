@@ -6,16 +6,18 @@ import org.infnet.Dice;
 @Data
 public abstract class Character {
 
+    private String name;
     private int hitPoints;
     private int strength;
     private int defense;
     private int agility;
 
-    public Character(int HitPoints,int strength,int defense,int agility){
+    public Character(int HitPoints,int strength,int defense,int agility, String name){
         this.hitPoints = HitPoints;
         this.strength = strength;
         this.defense = defense;
         this.agility = agility;
+        this.name = name;
     }
 
     public abstract int getDamage();

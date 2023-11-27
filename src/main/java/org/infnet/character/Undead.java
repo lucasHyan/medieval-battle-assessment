@@ -4,7 +4,7 @@ import org.infnet.Dice;
 
 public class Undead extends Character{
     public Undead() {
-        super(25,4,0,1);
+        super(25,4,0,1, "Undead");
     }
     @Override
     public int getDamage(){

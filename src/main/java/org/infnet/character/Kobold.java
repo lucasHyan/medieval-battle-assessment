@@ -4,8 +4,7 @@ import org.infnet.Dice;
 
 public class Kobold extends Character {
     public Kobold() {
-        super(20,4,2,4);
-
+        super(20,4,2,4, "Kobold");
     }
 
     @Override
