@@ -17,11 +17,10 @@ public class App {
         LocalDateTime start = LocalDateTime.now();
         MainMenu mainmenu = new MainMenu();
 
-        LOGGER.info("Scanning user nickname");
-        mainmenu.welcomeMenu();
-        Scanner scanner = new Scanner(System.in);
-        String userNicknameChoice = scanner.next();
 
+        mainmenu.welcomeMenu();
+
+        Scanner scanner = new Scanner(System.in);
         LOGGER.info("Scanning user class choice");
         mainmenu.classChoiceMenu();
         String userClassChoice = scanner.next();
