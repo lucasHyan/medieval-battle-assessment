@@ -6,13 +6,13 @@ import org.infnet.Dice;
 @Data
 public abstract class Character {
 
-    private int HitPoints;
+    private int hitPoints;
     private int strength;
     private int defense;
     private int agility;
 
     public Character(int HitPoints,int strength,int defense,int agility){
-        this.HitPoints = HitPoints;
+        this.hitPoints = HitPoints;
         this.strength = strength;
         this.defense = defense;
         this.agility = agility;
@@ -40,10 +40,10 @@ public abstract class Character {
         defender.takeDamage(this.getDamage());
     }
     public void takeDamage(int damage){
-        this.HitPoints -= damage;
+        this.hitPoints -= damage;
     }
     public boolean isAlive(){
-        return this.HitPoints > 0;
+        return this.hitPoints > 0;
     }
     @Override
     public String toString() {
